@@ -35,9 +35,11 @@ class TestWeeklyBudget(unittest.TestCase):
         self.assertTrue(allowed, reason)  # 0.60 USD estimado
         b.settle("u1", 0.40)
         snap = b.snapshot()["units"]["u1"]
-        self.assertAlmostEqual(snap["reserved"], 0.60, places=6)
+        # Semántica corregida (B3): settle libera la reserva equivalente —
+        # sin doble contabilidad. remaining = weekly - reserved - spent.
+        self.assertAlmostEqual(snap["reserved"], 0.20, places=6)
         self.assertAlmostEqual(snap["spent"], 0.40, places=6)
-        self.assertAlmostEqual(snap["remaining"], 0.0, places=6)
+        self.assertAlmostEqual(snap["remaining"], 0.40, places=6)
 
     def test_exceeded_denied(self):
         b = make_budget(self._td.name)

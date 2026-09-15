@@ -105,6 +105,7 @@ def load_deepseek_keys(only_available: bool = True) -> dict[str, str]:
 
 
 def load_github_oauth() -> str | None:
+    """OAuth de GitHub desde el vault, en memoria (nunca impresa)."""
     vault = _load_vault()
     if not vault:
         return None
@@ -145,6 +146,7 @@ def load_hub_tokens(name: str) -> dict[str, str] | None:
 
 
 def report_hub_tokens() -> list[str]:
+    """Líneas de máscaras de los tokens HCP (nunca valores)."""
     lines = []
     for name, path in sorted(HUB_TOKEN_FILES.items()):
         data = load_hub_tokens(name)
@@ -195,6 +197,7 @@ def load_ai_keys() -> dict[str, str | None]:
 
 
 def mask(value: str | None) -> str:
+    """Máscara segura: prefijo***sufijo con longitud (nunca el valor)."""
     if value is None:
         return "MISSING"
     if len(value) <= 8:
@@ -203,6 +206,7 @@ def mask(value: str | None) -> str:
 
 
 def report() -> list[str]:
+    """Líneas de máscaras y estado de todas las fuentes (nunca valores)."""
     lines = []
     # Claves DeepSeek del vault (con su estado verificado).
     vault = _load_vault()
@@ -285,6 +289,7 @@ def run_command(argv: list[str]) -> int:
 
 
 def main() -> int:
+    """CLI: --report/--hub-report/--verify/--run (claves solo en entorno)."""
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--report", action="store_true",
                     help="mostrar solo máscaras y estado (nunca valores)")

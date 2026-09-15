@@ -19,6 +19,11 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 
 from secrets_loader import load_deepseek_keys  # noqa: E402
+
+# S2: tarifas congeladas en constantes con nombre (una sola fuente).
+TARIFA_INPUT_PER_1M = 0.66
+TARIFA_CACHE_HIT_PER_1M = 0.022
+TARIFA_OUTPUT_PER_1M = 1.98
 from account_pool import AccountPool  # noqa: E402
 from budget_weekly import WeeklyBudget  # noqa: E402
 from dispatcher_multicuenta import MultiAccountDispatcher  # noqa: E402
@@ -44,9 +49,9 @@ class RealTransport:
                 prompt = int(usage.get("prompt_tokens") or 0)
                 cache_hit = int(usage.get("prompt_cache_hit_tokens") or 0)
                 completion = int(usage.get("completion_tokens") or 0)
-                cost = ((prompt - min(cache_hit, prompt)) * 0.66
-                        + min(cache_hit, prompt) * 0.022
-                        + completion * 1.98) / 1_000_000.0
+                cost = ((prompt - min(cache_hit, prompt)) * TARIFA_INPUT_PER_1M
+                        + min(cache_hit, prompt) * TARIFA_CACHE_HIT_PER_1M
+                        + completion * TARIFA_OUTPUT_PER_1M) / 1_000_000.0
                 content = ""
                 choices = data.get("choices") or []
                 if choices and choices[0].get("message"):

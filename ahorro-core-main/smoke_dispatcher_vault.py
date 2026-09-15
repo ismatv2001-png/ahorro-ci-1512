@@ -60,8 +60,9 @@ def main() -> int:
             r = d.submit("smoke-unit",
                          [{"role": "user", "content": f"smoke {i}"}], plan)
             receipts.append((r["account"], r["failoverUsed"], r["cost"]))
-    # Verificaciones sin exponer claves.
-    assert all(t.probed), "alguna clave no pasó el control de formato"
+    # Verificaciones sin exponer claves (raises explícitos: funcionan con -O).
+    if not all(t.probed):
+        raise SystemExit("FALLO: alguna clave no pasó el control de formato")
     accounts_used = sorted({a for a, _, _ in receipts})
     print(json.dumps({
         "vault_available_keys": len(keys),

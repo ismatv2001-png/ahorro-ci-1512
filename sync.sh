@@ -43,16 +43,10 @@ fi
 cp -a "$ORIG/secrets_loader.py" "$DEST/secrets_loader.py"
 echo "[sync] copiado secrets_loader.py"
 
-# 3. Exclusiones del CI: la batería NO toca red. ahorro_runner.py llama a la
-#    API real (https://api.deepseek.com/user/balance) y su test WIP de otra
-#    lane depende de red (falla con 401 real fuera de su entorno). No son
-#    "módulos necesarios" para la batería: solo test_ahorro_runner.py los
-#    importa y el discover -p 'test_*.py' no debe ejecutarlos. Si la lane los
-#    termina sin red, borrar este bloque para volver a incluirlos.
-for excl in ahorro_runner.py test_ahorro_runner.py; do
-  rm -f "$DEST/ahorro-core-main/$excl"
-done
-echo "[sync] excluidos del CI (tocan red): ahorro_runner.py, test_ahorro_runner.py"
+# 3. Runner CLI: INCLUIDO. Su test quedó blindado contra la red el
+#    2026-09-15 (stub de urlopen en proceso + sitecustomize en subprocesos +
+#    tripwire; 14/14 sin red), así que la batería sigue siendo 100% offline.
+echo "[sync] ahorro_runner.py + test incluidos (test blindado contra red)"
 
 # 4. Guardas: sin vault real, sin directorio secrets/ y sin claves por contenido.
 #    (smoke_dispatcher_vault.py es código legítimo: "vault" en su nombre no es
