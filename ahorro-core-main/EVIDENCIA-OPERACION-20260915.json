@@ -1,0 +1,207 @@
+{
+  "generated_utc": "2026-09-15T02:49:13Z",
+  "scenarios": {
+    "escenario_canonico_95pct": {
+      "units": 100,
+      "repeats_pct": 95.0,
+      "served_from_cache": 95,
+      "provider_calls": 5,
+      "baseline_cost_usd": 0.0198,
+      "actual_cost_usd": 0.00099,
+      "savings_pct": 95.0,
+      "quality_gate": {
+        "evaluated": 100,
+        "pasadas": 100,
+        "rechazadas": 0
+      },
+      "cache_stats": {
+        "entries": 6,
+        "hits": 95,
+        "misses": 5,
+        "hit_rate": 0.95,
+        "tokens_saved": 720,
+        "evictions": 0
+      },
+      "router_stats": {
+        "decisions": 5,
+        "routed": 5,
+        "degraded_never": true,
+        "fail_closed_to_quality": 0
+      },
+      "budget_report": {
+        "limits": {
+          "max_tokens": 100000,
+          "max_cost_usd": 10.0
+        },
+        "committed": {
+          "tokens": 900,
+          "cost_usd": 0.00099
+        },
+        "remaining": {
+          "remaining_tokens": 99100,
+          "remaining_cost_usd": 9.99901
+        },
+        "units_total": 5,
+        "units_settled": 5,
+        "units_open": 0
+      }
+    },
+    "escenario_carga_90pct_200u": {
+      "units": 200,
+      "repeats_pct": 90.0,
+      "served_from_cache": 180,
+      "provider_calls": 20,
+      "baseline_cost_usd": 0.0396,
+      "actual_cost_usd": 0.00396,
+      "savings_pct": 90.0,
+      "quality_gate": {
+        "evaluated": 200,
+        "pasadas": 200,
+        "rechazadas": 0
+      },
+      "cache_stats": {
+        "entries": 21,
+        "hits": 180,
+        "misses": 20,
+        "hit_rate": 0.9,
+        "tokens_saved": 2520,
+        "evictions": 0
+      },
+      "router_stats": {
+        "decisions": 20,
+        "routed": 20,
+        "degraded_never": true,
+        "fail_closed_to_quality": 0
+      },
+      "budget_report": {
+        "limits": {
+          "max_tokens": 100000,
+          "max_cost_usd": 10.0
+        },
+        "committed": {
+          "tokens": 3600,
+          "cost_usd": 0.00396
+        },
+        "remaining": {
+          "remaining_tokens": 96400,
+          "remaining_cost_usd": 9.99604
+        },
+        "units_total": 20,
+        "units_settled": 20,
+        "units_open": 0
+      }
+    }
+  },
+  "gate_individual": {
+    "degradada": {
+      "verdict": "RECHAZA",
+      "candidate": {
+        "accuracy": 0.0,
+        "fidelity": 0.017143,
+        "completeness": 0.0,
+        "total": 0.006
+      },
+      "baseline": {
+        "accuracy": 1.0,
+        "fidelity": 1.0,
+        "completeness": 1.0,
+        "total": 1.0
+      },
+      "delta": -0.994,
+      "epsilon": 0.0,
+      "principle": "degradacion_detectada",
+      "evidence": "candidato 0.006 vs baseline 1.0 (delta -0.994000, epsilon 0.0)"
+    },
+    "fiel": {
+      "verdict": "PASA",
+      "candidate": {
+        "accuracy": 1.0,
+        "fidelity": 1.0,
+        "completeness": 1.0,
+        "total": 1.0
+      },
+      "baseline": {
+        "accuracy": 1.0,
+        "fidelity": 1.0,
+        "completeness": 1.0,
+        "total": 1.0
+      },
+      "delta": 0.0,
+      "epsilon": 0.0,
+      "principle": "calidad_jamas_baja",
+      "evidence": "candidato 1.0 vs baseline 1.0 (delta +0.000000, epsilon 0.0)"
+    }
+  },
+  "checks": [
+    {
+      "check": "ahorro>=95 en escenario canonico",
+      "ok": true,
+      "valor": 95.0
+    },
+    {
+      "check": "gate calidad 100/100 en escenario canonico",
+      "ok": true,
+      "valor": {
+        "evaluated": 100,
+        "pasadas": 100,
+        "rechazadas": 0
+      }
+    },
+    {
+      "check": "respuesta degradada RECHAZADA",
+      "ok": true,
+      "valor": {
+        "verdict": "RECHAZA",
+        "candidate": {
+          "accuracy": 0.0,
+          "fidelity": 0.017143,
+          "completeness": 0.0,
+          "total": 0.006
+        },
+        "baseline": {
+          "accuracy": 1.0,
+          "fidelity": 1.0,
+          "completeness": 1.0,
+          "total": 1.0
+        },
+        "delta": -0.994,
+        "epsilon": 0.0,
+        "principle": "degradacion_detectada",
+        "evidence": "candidato 0.006 vs baseline 1.0 (delta -0.994000, epsilon 0.0)"
+      }
+    },
+    {
+      "check": "respuesta fiel PASA",
+      "ok": true,
+      "valor": {
+        "verdict": "PASA",
+        "candidate": {
+          "accuracy": 1.0,
+          "fidelity": 1.0,
+          "completeness": 1.0,
+          "total": 1.0
+        },
+        "baseline": {
+          "accuracy": 1.0,
+          "fidelity": 1.0,
+          "completeness": 1.0,
+          "total": 1.0
+        },
+        "delta": 0.0,
+        "epsilon": 0.0,
+        "principle": "calidad_jamas_baja",
+        "evidence": "candidato 1.0 vs baseline 1.0 (delta +0.000000, epsilon 0.0)"
+      }
+    },
+    {
+      "check": "escenario 90pct mantiene gate 100/100",
+      "ok": true,
+      "valor": {
+        "evaluated": 200,
+        "pasadas": 200,
+        "rechazadas": 0
+      }
+    }
+  ],
+  "all_checks_ok": true
+}

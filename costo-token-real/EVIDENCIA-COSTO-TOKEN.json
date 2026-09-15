@@ -1,0 +1,339 @@
+{
+  "carril": "ismatv1512-nuevos-trabajos",
+  "pieza": "metrica-coste-por-token-con-uso-real",
+  "datos_reales": true,
+  "fuentes_datos_reales": [
+    "/home/codespace/complete-1512/sessions",
+    "/home/codespace/.dsh-harness-1512-complete/sessions",
+    "/home/codespace/.dsh-harness-1512-recent72/sessions",
+    "/home/codespace/.dsh-harness-1512/sessions"
+  ],
+  "estadisticas_lectura": {
+    "ficheros_totales": 1741,
+    "ficheros_leidos": 1741,
+    "ficheros_error": 0,
+    "lineas": 1015922,
+    "rotas": 0,
+    "ignoradas": 957362,
+    "sin_uso": 28740,
+    "contextos": 125,
+    "descartados_con_texto": 10545,
+    "zstd": 1741,
+    "eventos_duplicados_descartados": 19473,
+    "eventos_uso": 10222
+  },
+  "agregados": {
+    "totales": {
+      "llamadas": 10222,
+      "tokens_input_miss": 10908923,
+      "tokens_cache_hit": 2392805632,
+      "tokens_output": 8184547,
+      "tokens_facturados": 2411899102,
+      "coste_usd": 80.452642072,
+      "llamadas_sin_precio": 0,
+      "tokens_sin_precio": 0,
+      "flags": {},
+      "usd_por_token": 3.3e-08,
+      "usd_por_llamada": 0.007870538
+    },
+    "por_modelo": {
+      "deepseek-v4-pro": {
+        "llamadas": 10222,
+        "tokens_input_miss": 10908923,
+        "tokens_cache_hit": 2392805632,
+        "tokens_output": 8184547,
+        "coste_usd": 80.452642072,
+        "confirmado": true,
+        "origen": "https://api-docs.deepseek.com/quick_start/pricing (consulta 2026-09-15)",
+        "flags": {}
+      }
+    },
+    "por_dia": {
+      "2026-09-03": {
+        "llamadas": 32,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-08": {
+        "llamadas": 60,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-09": {
+        "llamadas": 1120,
+        "tokens_input_miss": 460642,
+        "tokens_cache_hit": 259760512,
+        "tokens_output": 900164,
+        "coste_usd": 8.995095076
+      },
+      "2026-09-10": {
+        "llamadas": 204,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-11": {
+        "llamadas": 198,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-12": {
+        "llamadas": 408,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-13": {
+        "llamadas": 6469,
+        "tokens_input_miss": 8196079,
+        "tokens_cache_hit": 1764008576,
+        "tokens_output": 5546286,
+        "coste_usd": 55.199247092
+      },
+      "2026-09-14": {
+        "llamadas": 1256,
+        "tokens_input_miss": 754286,
+        "tokens_cache_hit": 321437056,
+        "tokens_output": 1144260,
+        "coste_usd": 9.835078792
+      },
+      "2026-09-15": {
+        "llamadas": 475,
+        "tokens_input_miss": 1497916,
+        "tokens_cache_hit": 47599488,
+        "tokens_output": 593837,
+        "coste_usd": 6.423221112
+      }
+    },
+    "por_unidad": {
+      "n_unidades": 71,
+      "top_10": [
+        {
+          "unidad": "session-d38a35ed-030f-4b72-a535-9bcfe124f3a4",
+          "llamadas": 1142,
+          "tokens_facturados": 424761927,
+          "coste_usd": 12.06426782
+        },
+        {
+          "unidad": "session-6a38e9d6-cfc8-49fd-b21c-7e72f1c8a9b9",
+          "llamadas": 1360,
+          "tokens_facturados": 440328292,
+          "coste_usd": 11.986655032
+        },
+        {
+          "unidad": "session-76c5387b-ea96-4222-bd3a-3bcefa35ff10",
+          "llamadas": 1080,
+          "tokens_facturados": 346562152,
+          "coste_usd": 11.495477532
+        },
+        {
+          "unidad": "session-a1928fc4-dc21-4b9b-a2fe-79d5d2c9fb82",
+          "llamadas": 538,
+          "tokens_facturados": 200109373,
+          "coste_usd": 5.624791876
+        },
+        {
+          "unidad": "session-b38edf31-1ac1-464b-9a53-4f4283338814",
+          "llamadas": 576,
+          "tokens_facturados": 186963061,
+          "coste_usd": 4.909373876
+        },
+        {
+          "unidad": "session-6a88f2c6-b8c9-4b55-a851-4d694a5f911e",
+          "llamadas": 458,
+          "tokens_facturados": 144788110,
+          "coste_usd": 4.496165256
+        },
+        {
+          "unidad": "session-5c320433-10ba-42fe-bfa2-b44334a6650a",
+          "llamadas": 373,
+          "tokens_facturados": 118777105,
+          "coste_usd": 4.338687012
+        },
+        {
+          "unidad": "session-efd6e99a-78f6-4d44-9d48-c1d928026a39",
+          "llamadas": 397,
+          "tokens_facturados": 117256570,
+          "coste_usd": 3.38831108
+        },
+        {
+          "unidad": "session-bb7c08e8-5896-46f0-a98c-0206050377d9",
+          "llamadas": 317,
+          "tokens_facturados": 97595737,
+          "coste_usd": 3.2147929
+        },
+        {
+          "unidad": "session-e366a64e-f016-4f9f-8c0f-5e3ddb78bc44",
+          "llamadas": 129,
+          "tokens_facturados": 26009785,
+          "coste_usd": 1.978900088
+        }
+      ]
+    }
+  },
+  "ahorro_cache_ya_realizado_usd": 1574.327330048,
+  "ahorro_cache_ya_realizado_por_modelo": {
+    "deepseek-v4-pro": 1574.327330048
+  },
+  "linea_base_sin_cache_usd": 1654.77997212,
+  "ahorro_cache_pct_sobre_linea_base": 95.1382,
+  "llamadas_con_usage_cero": 1583,
+  "escenarios_proyeccion": {
+    "cache_90": {
+      "parametros": {
+        "hit_rate_objetivo": 0.9,
+        "fraccion_router": 0.0,
+        "modelo_caro": "deepseek-v4-pro",
+        "modelo_barato": "deepseek-flash"
+      },
+      "formula_ahorro_cache": "max(0, hit_rate*(input+cacheRead)-cacheRead)/1M*(precio_miss-precio_hit)",
+      "formula_ahorro_router": "fraccion_router*(coste_modelo_caro-coste_modelo_barato)",
+      "ahorro_cache_adicional_usd": 4.090673979,
+      "ahorro_router_usd": 0.0,
+      "ahorro_proyectado_total_usd": 4.090673979,
+      "tokens_input_considerados": 10908923,
+      "tokens_cache_considerados": 2392805632,
+      "eventos_modelo_caro": 10222
+    },
+    "cache_95": {
+      "parametros": {
+        "hit_rate_objetivo": 0.95,
+        "fraccion_router": 0.0,
+        "modelo_caro": "deepseek-v4-pro",
+        "modelo_barato": "deepseek-flash"
+      },
+      "formula_ahorro_cache": "max(0, hit_rate*(input+cacheRead)-cacheRead)/1M*(precio_miss-precio_hit)",
+      "formula_ahorro_router": "fraccion_router*(coste_modelo_caro-coste_modelo_barato)",
+      "ahorro_cache_adicional_usd": 4.632459559,
+      "ahorro_router_usd": 0.0,
+      "ahorro_proyectado_total_usd": 4.632459559,
+      "tokens_input_considerados": 10908923,
+      "tokens_cache_considerados": 2392805632,
+      "eventos_modelo_caro": 10222
+    },
+    "cache_95_router_10": {
+      "parametros": {
+        "hit_rate_objetivo": 0.95,
+        "fraccion_router": 0.1,
+        "modelo_caro": "deepseek-v4-pro",
+        "modelo_barato": "deepseek-flash"
+      },
+      "formula_ahorro_cache": "max(0, hit_rate*(input+cacheRead)-cacheRead)/1M*(precio_miss-precio_hit)",
+      "formula_ahorro_router": "fraccion_router*(coste_modelo_caro-coste_modelo_barato)",
+      "ahorro_cache_adicional_usd": 4.632459559,
+      "ahorro_router_usd": 6.574789683,
+      "ahorro_proyectado_total_usd": 11.207249243,
+      "tokens_input_considerados": 10908923,
+      "tokens_cache_considerados": 2392805632,
+      "eventos_modelo_caro": 10222
+    },
+    "cache_95_router_25": {
+      "parametros": {
+        "hit_rate_objetivo": 0.95,
+        "fraccion_router": 0.25,
+        "modelo_caro": "deepseek-v4-pro",
+        "modelo_barato": "deepseek-flash"
+      },
+      "formula_ahorro_cache": "max(0, hit_rate*(input+cacheRead)-cacheRead)/1M*(precio_miss-precio_hit)",
+      "formula_ahorro_router": "fraccion_router*(coste_modelo_caro-coste_modelo_barato)",
+      "ahorro_cache_adicional_usd": 4.632459559,
+      "ahorro_router_usd": 16.436974208,
+      "ahorro_proyectado_total_usd": 21.069433768,
+      "tokens_input_considerados": 10908923,
+      "tokens_cache_considerados": 2392805632,
+      "eventos_modelo_caro": 10222
+    }
+  },
+  "ahorro_relativo_escenarios": {
+    "cache_90": {
+      "ahorro_usd": 4.090673979,
+      "pct_sobre_coste_actual": 5.0846
+    },
+    "cache_95": {
+      "ahorro_usd": 4.632459559,
+      "pct_sobre_coste_actual": 5.758
+    },
+    "cache_95_router_10": {
+      "ahorro_usd": 11.207249243,
+      "pct_sobre_coste_actual": 13.9302
+    },
+    "cache_95_router_25": {
+      "ahorro_usd": 21.069433768,
+      "pct_sobre_coste_actual": 26.1886
+    }
+  },
+  "precios_usados": {
+    "deepseek-v4-pro": {
+      "input_miss": {
+        "pico": 1.32,
+        "valle": 0.66
+      },
+      "cache_hit": {
+        "pico": 0.044,
+        "valle": 0.022
+      },
+      "output": {
+        "pico": 3.96,
+        "valle": 1.98
+      },
+      "confirmado": true,
+      "origen": "https://api-docs.deepseek.com/quick_start/pricing (consulta 2026-09-15)"
+    },
+    "deepseek-flash": {
+      "input_miss": {
+        "pico": 0.3,
+        "valle": 0.15
+      },
+      "cache_hit": {
+        "pico": 0.006,
+        "valle": 0.003
+      },
+      "output": {
+        "pico": 1.2,
+        "valle": 0.6
+      },
+      "confirmado": true,
+      "origen": "https://api-docs.deepseek.com/quick_start/pricing (consulta 2026-09-15)"
+    },
+    "deepseek-chat": {
+      "input_miss": 0.27,
+      "cache_hit": 0.07,
+      "output": 1.1,
+      "confirmado": false,
+      "origen": "tarifa historica V3 (PRECIO_A_CONFIRMAR)"
+    },
+    "deepseek-reasoner": {
+      "input_miss": 0.55,
+      "cache_hit": 0.14,
+      "output": 2.19,
+      "confirmado": false,
+      "origen": "tarifa historica R1 (PRECIO_A_CONFIRMAR)"
+    }
+  },
+  "sha256_artefactos": {
+    "cost_meter.py": {
+      "sha256": "5d71ec1c03e05d0b1219b994d290e4930d562d71b2d643f4454f4ae2edad780c",
+      "bytes": 32537
+    },
+    "test_cost_meter.py": {
+      "sha256": "4b7b1b578095062a70f6d213c9d74ec602afe22fc0cea31af2aaa6c4d7b6769d",
+      "bytes": 19806
+    },
+    "HALLAZGOS-DATOS-REALES.md": {
+      "sha256": "23ac62c6e751f1dc8b77f8f6611c19d311f8d7f8bd54e1a69b0c14fb8337820e",
+      "bytes": 5082
+    },
+    "informe-real-completo.json": {
+      "sha256": "421165d6a131e260a9c9515ffeb7353c981f71ff9b1d4c10565eb5344a942501",
+      "bytes": 7168
+    }
+  }
+}

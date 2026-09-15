@@ -1,0 +1,251 @@
+{
+  "generado_utc": "2026-09-15T02:05:52.958900+00:00",
+  "fuentes": [
+    "/home/codespace/complete-1512/sessions",
+    "/home/codespace/.dsh-harness-1512-complete/sessions",
+    "/home/codespace/.dsh-harness-1512-recent72/sessions",
+    "/home/codespace/.dsh-harness-1512/sessions"
+  ],
+  "estadisticas": {
+    "ficheros_totales": 1741,
+    "ficheros_leidos": 1741,
+    "ficheros_error": 0,
+    "lineas": 1012213,
+    "rotas": 0,
+    "ignoradas": 953703,
+    "sin_uso": 28740,
+    "contextos": 125,
+    "descartados_con_texto": 10540,
+    "zstd": 1741,
+    "eventos_duplicados_descartados": 19473,
+    "eventos_uso": 10172
+  },
+  "precios": {
+    "deepseek-v4-pro": {
+      "input_miss": {
+        "pico": 1.32,
+        "valle": 0.66
+      },
+      "cache_hit": {
+        "pico": 0.044,
+        "valle": 0.022
+      },
+      "output": {
+        "pico": 3.96,
+        "valle": 1.98
+      },
+      "confirmado": true,
+      "origen": "https://api-docs.deepseek.com/quick_start/pricing (consulta 2026-09-15)"
+    },
+    "deepseek-flash": {
+      "input_miss": {
+        "pico": 0.3,
+        "valle": 0.15
+      },
+      "cache_hit": {
+        "pico": 0.006,
+        "valle": 0.003
+      },
+      "output": {
+        "pico": 1.2,
+        "valle": 0.6
+      },
+      "confirmado": true,
+      "origen": "https://api-docs.deepseek.com/quick_start/pricing (consulta 2026-09-15)"
+    },
+    "deepseek-chat": {
+      "input_miss": 0.27,
+      "cache_hit": 0.07,
+      "output": 1.1,
+      "confirmado": false,
+      "origen": "tarifa historica V3 (PRECIO_A_CONFIRMAR)"
+    },
+    "deepseek-reasoner": {
+      "input_miss": 0.55,
+      "cache_hit": 0.14,
+      "output": 2.19,
+      "confirmado": false,
+      "origen": "tarifa historica R1 (PRECIO_A_CONFIRMAR)"
+    }
+  },
+  "agregados": {
+    "totales": {
+      "llamadas": 10172,
+      "tokens_input_miss": 10885711,
+      "tokens_cache_hit": 2387604480,
+      "tokens_output": 8133304,
+      "tokens_facturados": 2406623495,
+      "coste_usd": 79.99022926399994,
+      "llamadas_sin_precio": 0,
+      "tokens_sin_precio": 0,
+      "flags": {},
+      "usd_por_token": 3.3237533594343944e-08,
+      "usd_por_llamada": 0.007863766148643328
+    },
+    "por_modelo": {
+      "deepseek-v4-pro": {
+        "llamadas": 10172,
+        "tokens_input_miss": 10885711,
+        "tokens_cache_hit": 2387604480,
+        "tokens_output": 8133304,
+        "coste_usd": 79.99022926399994,
+        "confirmado": true,
+        "origen": "https://api-docs.deepseek.com/quick_start/pricing (consulta 2026-09-15)",
+        "flags": {}
+      }
+    },
+    "por_dia": {
+      "2026-09-03": {
+        "llamadas": 32,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-08": {
+        "llamadas": 60,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-09": {
+        "llamadas": 1120,
+        "tokens_input_miss": 460642,
+        "tokens_cache_hit": 259760512,
+        "tokens_output": 900164,
+        "coste_usd": 8.995095076000007
+      },
+      "2026-09-10": {
+        "llamadas": 204,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-11": {
+        "llamadas": 198,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-12": {
+        "llamadas": 408,
+        "tokens_input_miss": 0,
+        "tokens_cache_hit": 0,
+        "tokens_output": 0,
+        "coste_usd": 0.0
+      },
+      "2026-09-13": {
+        "llamadas": 6469,
+        "tokens_input_miss": 8196079,
+        "tokens_cache_hit": 1764008576,
+        "tokens_output": 5546286,
+        "coste_usd": 55.19924709199994
+      },
+      "2026-09-14": {
+        "llamadas": 1256,
+        "tokens_input_miss": 754286,
+        "tokens_cache_hit": 321437056,
+        "tokens_output": 1144260,
+        "coste_usd": 9.83507879199999
+      },
+      "2026-09-15": {
+        "llamadas": 425,
+        "tokens_input_miss": 1474704,
+        "tokens_cache_hit": 42398336,
+        "tokens_output": 542594,
+        "coste_usd": 5.960808303999993
+      }
+    },
+    "por_unidad": {
+      "n_unidades": 71,
+      "top_10": [
+        {
+          "unidad": "session-d38a35ed-030f-4b72-a535-9bcfe124f3a4",
+          "llamadas": 1142,
+          "tokens_facturados": 424761927,
+          "coste_usd": 12.064267819999987
+        },
+        {
+          "unidad": "session-6a38e9d6-cfc8-49fd-b21c-7e72f1c8a9b9",
+          "llamadas": 1360,
+          "tokens_facturados": 440328292,
+          "coste_usd": 11.986655032000003
+        },
+        {
+          "unidad": "session-76c5387b-ea96-4222-bd3a-3bcefa35ff10",
+          "llamadas": 1080,
+          "tokens_facturados": 346562152,
+          "coste_usd": 11.495477532000002
+        },
+        {
+          "unidad": "session-a1928fc4-dc21-4b9b-a2fe-79d5d2c9fb82",
+          "llamadas": 538,
+          "tokens_facturados": 200109373,
+          "coste_usd": 5.624791875999997
+        },
+        {
+          "unidad": "session-b38edf31-1ac1-464b-9a53-4f4283338814",
+          "llamadas": 576,
+          "tokens_facturados": 186963061,
+          "coste_usd": 4.909373875999997
+        },
+        {
+          "unidad": "session-6a88f2c6-b8c9-4b55-a851-4d694a5f911e",
+          "llamadas": 458,
+          "tokens_facturados": 144788110,
+          "coste_usd": 4.4961652559999985
+        },
+        {
+          "unidad": "session-5c320433-10ba-42fe-bfa2-b44334a6650a",
+          "llamadas": 373,
+          "tokens_facturados": 118777105,
+          "coste_usd": 4.3386870119999985
+        },
+        {
+          "unidad": "session-efd6e99a-78f6-4d44-9d48-c1d928026a39",
+          "llamadas": 397,
+          "tokens_facturados": 117256570,
+          "coste_usd": 3.388311079999999
+        },
+        {
+          "unidad": "session-bb7c08e8-5896-46f0-a98c-0206050377d9",
+          "llamadas": 317,
+          "tokens_facturados": 97595737,
+          "coste_usd": 3.2147929
+        },
+        {
+          "unidad": "session-e366a64e-f016-4f9f-8c0f-5e3ddb78bc44",
+          "llamadas": 129,
+          "tokens_facturados": 26009785,
+          "coste_usd": 1.9789000880000005
+        }
+      ]
+    }
+  },
+  "ahorro": {
+    "ahorro_cache_realizado_usd": 1567.6906600960006,
+    "por_modelo": {
+      "deepseek-v4-pro": 1567.6906600960006
+    }
+  },
+  "proyeccion": {
+    "parametros": {
+      "hit_rate_objetivo": 0.95,
+      "fraccion_router": 0.1,
+      "modelo_caro": "deepseek-v4-pro",
+      "modelo_barato": "deepseek-flash"
+    },
+    "formula_ahorro_cache": "max(0, hit_rate*(input+cacheRead)-cacheRead)/1M*(precio_miss-precio_hit)",
+    "formula_ahorro_router": "fraccion_router*(coste_modelo_caro-coste_modelo_barato)",
+    "ahorro_cache_adicional_usd": 4.632459559199997,
+    "ahorro_router_usd": 6.538514613799981,
+    "ahorro_proyectado_total_usd": 11.170974172999978,
+    "tokens_input_considerados": 10885711,
+    "tokens_cache_considerados": 2387604480,
+    "eventos_modelo_caro": 10172
+  },
+  "version": "1.0.0"
+}

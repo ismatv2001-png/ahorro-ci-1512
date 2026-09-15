@@ -1,0 +1,9 @@
+# Artefactos de Python (se regeneran en cada runner)
+__pycache__/
+*.pyc
+
+# Nunca subir material sensible (guardas adicionales, además de sync.sh)
+vault-*.json
+secrets/
+*.key
+*.pem

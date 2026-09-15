@@ -1,0 +1,56 @@
+# battery.yml — CI GRATUITO (netAmount=0) de la batería de tests del carril de
+# ahorro. Runner público ubuntu-latest (cuota gratuita de GitHub Actions),
+# sin secretos, sin red: los tests y el fuzz son 100% stdlib y locales.
+#
+# Ejecuta:
+#   1. python3 -m unittest discover -s ahorro-core-main -p 'test_*.py'
+#   2. python3 -m unittest discover -s costo-token-real -p 'test_*.py'
+#   3. python3 ahorro-core-main/fuzz_semantic_cache_props.py 100
+#
+# secrets_loader.py se incluye en el repo pero en CI opera SIN vault: su
+# _load_vault() devuelve None cuando ~/.config/deepseek-harness-1512/...
+# no existe en el runner, y las funciones de carga devuelven None/{}.
+name: battery-ahorro
+
+on:
+  push:
+  workflow_dispatch: {}
+
+concurrency:
+  group: battery-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  battery:
+    name: Batería ahorro (unittest + fuzz)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Dependencias (solo si existe requirements.txt; la batería es stdlib)
+        run: |
+          python3 -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            python3 -m pip install -r requirements.txt
+          else
+            echo "sin requirements.txt: batería 100% stdlib, sin deps"
+          fi
+
+      - name: Unit tests ahorro-core-main
+        run: python3 -m unittest discover -s ahorro-core-main -p 'test_*.py'
+
+      - name: Unit tests costo-token-real
+        run: python3 -m unittest discover -s costo-token-real -p 'test_*.py'
+
+      - name: Fuzz propiedades del cache semántico (100 iteraciones)
+        run: python3 ahorro-core-main/fuzz_semantic_cache_props.py 100

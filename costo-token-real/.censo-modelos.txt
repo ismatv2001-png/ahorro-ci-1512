@@ -1,0 +1,10 @@
+sessions_total: 845
+sessions_with_usage: 59
+usage_events: 9747
+broken_lines: 0
+request/context per session histogram: {1: 47, 0: 798}
+models (count of usage events per model):
+   'deepseek-v4-pro' 8164
+   '<sin-modelo>' 1583
+providers: {'deepseek-official': 47}
+time range UTC: 2026-09-03 03:53:10.508000+00:00 -> 2026-09-14 23:37:57.667000+00:00

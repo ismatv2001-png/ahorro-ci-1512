@@ -1,0 +1,21 @@
+== COST-METER (agregados, sin textos) ==
+fuentes: /home/codespace/complete-1512/sessions, /home/codespace/.dsh-harness-1512-complete/sessions, /home/codespace/.dsh-harness-1512-recent72/sessions, /home/codespace/.dsh-harness-1512/sessions
+ficheros leidos: 1741 de 1741 (errores: 0)
+lineas: 1012213 | rotas: 0 | eventos uso: 10172 | descartados con texto: 10540
+TOTAL: 10172 llamadas | input(miss)=10885711 hit=2387604480 out=8133304 | coste=79.990229 USD
+USD/token=0.00000003 | USD/llamada=0.007864
+por modelo:
+  deepseek-v4-pro           10172 llamadas | in=10885711 hit=2387604480 out=8133304 | 79.990229 USD
+por dia (UTC):
+  2026-09-03     32 llamadas | in=0 hit=0 out=0 | 0.000000 USD
+  2026-09-08     60 llamadas | in=0 hit=0 out=0 | 0.000000 USD
+  2026-09-09   1120 llamadas | in=460642 hit=259760512 out=900164 | 8.995095 USD
+  2026-09-10    204 llamadas | in=0 hit=0 out=0 | 0.000000 USD
+  2026-09-11    198 llamadas | in=0 hit=0 out=0 | 0.000000 USD
+  2026-09-12    408 llamadas | in=0 hit=0 out=0 | 0.000000 USD
+  2026-09-13   6469 llamadas | in=8196079 hit=1764008576 out=5546286 | 55.199247 USD
+  2026-09-14   1256 llamadas | in=754286 hit=321437056 out=1144260 | 9.835079 USD
+  2026-09-15    425 llamadas | in=1474704 hit=42398336 out=542594 | 5.960808 USD
+ahorro cache YA realizado: 1567.690660 USD
+proyeccion adicional (hit_rate=0.95, router=0.10): 11.170974 USD
+informe JSON -> informe-real-completo.json
