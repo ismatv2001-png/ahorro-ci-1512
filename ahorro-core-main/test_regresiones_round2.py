@@ -206,3 +206,29 @@ class TestRegresionesRound2(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class TestD4bisReserveOnReplay(unittest.TestCase):
+    """Sonda A7: reenvío del mismo opId (cache=None) NO reserva de nuevo."""
+
+    def test_replay_does_not_reserve_again(self):
+        with tempfile.TemporaryDirectory() as td:
+            t = FakeTransport()
+            pool = AccountPool(
+                [{"label": "c0", "key_ref": "r0",
+                  "budget_usd_diario": 5.0, "max_concurrent": 4}],
+                resolver=lambda r: "KEY")
+            budget = WeeklyBudget(Path(td) / "b.json")
+            budget.set_weekly("unit-a", 10.0)
+            d = MultiAccountDispatcher(pool, budget, lambda r: "KEY", t,
+                                       cache=None)
+            d.submit("unit-a", MSGS, PLAN)
+            r2 = d.submit("unit-a", MSGS, PLAN)
+            self.assertTrue(r2.get("reusedReceipt"))
+            self.assertEqual(t.calls, 1)
+            snap = budget.snapshot()["units"]["unit-a"]
+            # Solo UNA reserva viva (la liquidada): remaining intacto.
+            est = (len("hola") // 3 + 50) * 1.0 / 1_000_000.0
+            self.assertAlmostEqual(snap["reserved"], 0.0, places=6)
+            self.assertAlmostEqual(
+                snap["remaining"], round(10.0 - 0.0001, 6), places=5)

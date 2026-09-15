@@ -96,17 +96,18 @@ class MultiAccountDispatcher:
         if hit is not None:
             return hit
 
-        # 2) Presupuesto semanal fail-closed ANTES de cualquier efecto.
-        self._reserve_or_raise(unit_id, input_estimate, max_tokens, rate)
+        # 2) Idempotencia ANTES de reservar (D4 bis, sonda A7): un reenvío del
+        # mismo opId NO reserva nada — el remaining no mengua sin cargo real.
         body = self._build_body(messages, max_tokens)
         op_id = sha256_text(canonical_json(body))
-
-        # D4: idempotencia — el mismo opId jamás se ejecuta dos veces.
         if op_id in self._receipts:
             return {**self._receipts[op_id], "reusedReceipt": True}
         if op_id in self._inflight:
             raise DispatcherError("op-in-flight",
                                   f"operation {op_id} already in flight")
+
+        # 3) Presupuesto semanal fail-closed ANTES de cualquier efecto.
+        self._reserve_or_raise(unit_id, input_estimate, max_tokens, rate)
         self._inflight.add(op_id)
         try:
             # 3) Cuenta del pool + clave EN MEMORIA.
